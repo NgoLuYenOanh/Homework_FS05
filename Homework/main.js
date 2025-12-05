@@ -87,22 +87,22 @@
 // alert(`Sum of first 50 integer number: ${sum}`);
 
 // --------- 6 ---------
-// let fn = 1,
-//   f0 = 0,
-//   f1 = 1,
-//   n;
-// do {
-//   n = Number(prompt("Enter number: "));
-//   if (isNaN(n)) {
-//     alert("Please enter a number.");
-//   } else if (n < 2) {
-//     alert("Please enter number greater than 2. ");
-//   }
-// } while (isNaN(n) && n < 2);
+let fn = 1,
+  f0 = 0,
+  f1 = 1;
 
-// for (let i = 2; i <= n; i++) {
-//   fn = f1 + f0;
-//   f0 = f1;
-//   f1 = fn;
-// }
-// alert(fn);
+for (let i = 0; i <= 20; i++) {
+  console.log(`${fn} `);
+  fn = f1 + f0;
+  f0 = f1;
+  f1 = fn;
+}
+
+// --------- 7 ---------
+// let studentCode = 2025;
+// let studentName = "Bap";
+// let studentAge = 18;
+// let studentSex = "female";
+// alert(
+//   `student code: ${studentCode} \nstudent name: ${studentName} \nstudent age: ${studentAge} \nstudent sex: ${studentSex}`
+// );
