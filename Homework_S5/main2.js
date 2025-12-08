@@ -1,56 +1,51 @@
+// EX1:
+
 // ------------ 1 ------------
-// let numbers = [];
-// do {
-//   for (let i = 0; i < 10; i++) {
-//     numbers = Number(prompt(`Enter 10 numbers: `, numbers[i]));
-//     console.log(`i = ${i + 1}, number = ${numbers}`);
-//   }
-//   if (isNaN(numbers)) {
-//     console.log("Please enter numbers.");
-//   }
-// } while (isNaN(numbers));
-
+let numbers = [];
+for (let i = 0; i < 10; i++) {
+  let input;
+  do {
+    input = prompt(`Enter number ${i + 1}: `);
+    if (isNaN(input)) {
+      alert("Please enter a number.");
+    }
+    numbers[i] = Number(input);
+  } while (isNaN(input));
+}
 // ------------ 2 ------------
-function printAll(...arr) {
-  console.log(`${arr}`);
+function printValue() {
+  console.log(numbers);
 }
-let members = [];
-while (true) {
-  const input = prompt("Enter members (enter space to exit): ");
-  if (input === " " || input === null) {
-    break;
-  }
-  members = input;
-  printAll(members);
-}
-
+printValue();
 // ------------ 3 ------------
-let value = prompt("Enter a value to find: ");
-console.log(`value = ${value}, ${members.includes(value)}`);
+function findValue() {
+  let value = Number(prompt("Enter a value to find: "));
+  console.log(`value = ${value}, ${numbers.includes(value)}`);
+}
+findValue();
 
 // ------------ 4 ------------
 function maximum(...arr) {
-  return Math.max(arr);
+  return Math.max(...arr);
 }
-console.log(`maximum value = ${maximum(members)}`);
+console.log(`maximum value = ${maximum(...numbers)}`);
 
 // ------------ 5 ------------
-function calculateSum(...arr) {
+function calculateSum(arr) {
   let sum = 0;
-  for (let i = 1; i <= arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     sum += arr[i];
   }
   return sum;
 }
-console.log(`sum of all elemts = ${calculateSum(members)}`);
+console.log(`sum of all element = ${calculateSum(numbers)}`);
 
 // ------------ 6 ------------
-function sortAll(...arr) {
-  console.log(arr.sort());
+function sortAll(arr) {
+  arr.sort((a, b) => b - a);
+  console.log("sap xep:", arr);
 }
-members.sort((a, b) => b - a);
-console.log("sap xep:" + members);
-
+sortAll(numbers);
 // ------------ 7 ------------
 let menu = prompt(
   `1. Print Array\n2. Search a member\n3. Find maximum number\n ====================\n Enter a number (1 -> 3): `
