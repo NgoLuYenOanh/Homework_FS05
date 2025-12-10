@@ -16,20 +16,37 @@
   <body>
     <form action="" method="post">
       <h1>THÔNG TIN LỚP</h1>
-      <label for="className" class="className">Tên lớp:</label>
-      <input type="text" id="className" name="className" />
-      <p>Số lượng HS:</p>
+      <div>
+        <label for="className" class="className">Tên lớp:</label>
+        <input type="text" id="className" name="className" />
+        <span class="number"
+          >Số lượng HS:
+          <p>0</p></span
+        >
+      </div>
       <br />
-      <label for="tuitionRate">Suất học</label>
-      <select name="tuitionRate" id="tuitionRate">
-        <option value="tuitionRate">2-4-6</option>
-        <option value="tuitionRate">3-5-7</option>
-      </select>
+      <div>
+        <label for="tuitionRate">Suất học</label>
+        <select name="tuitionRate" id="tuitionRate">
+          <option value="tuitionRate">2-4-6</option>
+          <option value="tuitionRate">3-5-7</option>
+        </select>
+      </div>
       <br />
-      <label for="teacher">Giảng viên</label>
-      <input type="text" id="teacher" name="teacher" />
+      <div>
+        <label for="teacher">Giảng viên</label>
+        <input type="text" id="teacher" name="teacher" />
+      </div>
     </form>
     <div class="table">
+      <table>
+        <tr>
+          <th>STT</th>
+          <th>Name</th>
+          <th>Birth</th>
+          <th>Phone</th>
+        </tr>
+      </table>
       <i class="fa-solid fa-circle-plus"></i>
     </div>
     <script src="main.js"></script>

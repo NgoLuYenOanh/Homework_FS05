@@ -6,6 +6,7 @@
 
 form {
   margin-left: 40%;
+  margin-bottom: 1em;
 }
 
 h1 {
@@ -22,6 +23,7 @@ label {
 select,
 input {
   width: 15em;
+  height: 2em;
 }
 select {
   text-align: center;
@@ -30,11 +32,40 @@ select {
 .table {
   margin: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
+  min-height: 10em;
+  border-radius: 1em;
   border: 1px solid black;
 }
 .table i {
   font-size: 2em;
+  transition: 0.4s all;
+  cursor: pointer;
+}
+
+.table i:hover {
+  color: gray;
+}
+.table table {
+  border-collapse: collapse;
+  width: 90%;
+  margin-bottom: 2em;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+td input {
+  width: 80% !important;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
