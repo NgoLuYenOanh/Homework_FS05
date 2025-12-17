@@ -28,31 +28,36 @@ const products = [
 
 //7
 const apparelProducts = products.filter((e) => e.category === "Apparel");
-const saleProducts = apparelProducts.map((e) => (e.price *= 10 / 100));
-console.log(saleProducts);
+const saleProducts = apparelProducts.map((e) => e.price * 0.9);
+console.log(`7. ${saleProducts}`);
 
 //8
 const groupProducts = products.reduce((acc, cur) => {
   const key = cur.category;
 
   if (!acc[key]) {
-    acc[key] = [];
+    acc[key] = 0;
   }
-  acc[key].push(cur.price);
+  acc[key] += cur.price;
   return acc;
 });
-console.log(groupProducts);
+console.log("8.", groupProducts);
 
 //9
 const cheapProducts = products.reduce((acc, cur) => {
   if (cur.inStock === true) {
-    acc.price = Math.min(cur.price);
-    console.log(acc);
+    return acc;
   }
-});
+  if (!acc || cur.price < acc.price) {
+    return cur;
+  }
+
+  return acc;
+}, null);
+console.log("9.", cheapProducts);
 
 //10
 const under100Products = products.filter((e) => e.price < 100);
 const formatProducts = under100Products.map((e) => `${e.name} - $${e.price}`);
 const stringProducts = formatProducts.join("; ");
-console.log(stringProducts);
+console.log(`10. ${stringProducts}`);

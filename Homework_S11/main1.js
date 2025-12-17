@@ -26,17 +26,17 @@ const products = [
 
 //1
 const newProducts = products.map((e) => e.name);
-console.log(newProducts);
+console.log(`1. ${newProducts}`);
 
 //2
-const electronicsProducts = products.filter((e) => {
-  return e.category === "Electronics" && e.inStock == true;
-});
-console.log(electronicsProducts);
+const electronicsProducts = products.filter(
+  (e) => e.category === "Electronics" && e.inStock === true
+);
+console.log("2.", electronicsProducts);
 
 //3
 const costsProducts = products.forEach((e) => {
-  console.log(`Product ${e.name} costs ${e.price}`);
+  console.log(`3. Product ${e.name} costs ${e.price}`);
 });
 
 //4
@@ -47,12 +47,12 @@ totalProducts = products.reduce((acc, cur) => {
     return acc;
   }
 }, 0);
-console.log(totalProducts);
+console.log(`4. ${totalProducts}`);
 
 //5
 const someProducts = products.some((e) => e.price > 1000);
-console.log(someProducts);
+console.log(`5. ${someProducts}`);
 
 //6
 const everyProducts = products.every((e) => e.price > 10);
-console.log(someProducts);
+console.log(`6. ${everyProducts}`);
