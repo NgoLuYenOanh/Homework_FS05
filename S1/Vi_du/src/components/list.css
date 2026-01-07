@@ -1,0 +1,12 @@
+td:nth-child(2) {
+  text-align: left;
+  width: 30%;
+}
+td:first-child,
+td:last-child {
+  width: 10%;
+}
+tr {
+  border-bottom: 1px solid floralwhite;
+  margin-bottom: 2px;
+}
